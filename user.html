@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Language Selection Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        :root {
+            --clr-primary: #5D956B; /* Primary Blue for a professional touch */
+            --clr-secondary: #6c757d;
+            --clr-background: #f8f9fa; /* Clean background */
+            --clr-sidebar: #5D956B; /* Dark sidebar */
+            --clr-success: #28a745;
+            --clr-info: #17a2b8;
+        }
+
+        body {
+            background-color: var(--clr-background); 
+            font-family: 'Roboto', sans-serif;
+            overflow-x: hidden;
+            direction: ltr; /* Set direction to Left-to-Right */
+            text-align: left;
+        }
+        
+        /* --------------------------------------------------------------------------
+         * Sidebar - Fixed to the Left
+         * -------------------------------------------------------------------------- */
+        .sidebar {
+            width: 15rem !important;
+            min-height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0; 
+            z-index: 1000;
+            background-color: var(--clr-sidebar);
+            padding-top: 1rem;
+            color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .sidebar-brand {
+            padding: 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .sidebar .nav-item .nav-link {
+            padding: 0.75rem 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar .nav-item .nav-link i {
+            margin-right: 10px; /* Space between icon and text */
+        }
+        
+        .sidebar .nav-item.active .nav-link {
+            color: var(--clr-primary);
+            background-color: rgba(255, 255, 255, 0.9);
+            /* Shape for active item */
+            border-radius: 0 50px 50px 0; 
+            margin: 0.25rem 0;
+            margin-left: 1rem;
+        }
+
+        /* --------------------------------------------------------------------------
+         * Content Wrapper
+         * -------------------------------------------------------------------------- */
+        #content-wrapper {
+            margin-left: 15rem; /* Space for the left sidebar */
+            padding: 1.5rem;
+            min-height: 100vh;
+            width: calc(100% - 15rem);
+        }
+        
+        /* --------------------------------------------------------------------------
+         * Language Cards
+         * -------------------------------------------------------------------------- */
+        .language-card {
+            border: none; 
+            border-radius: 0.75rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 0.5rem 1rem #5D956B(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+        }
+        .language-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-title {
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        /* Specific colors */
+        .card-english .card-title { color: #dc3545; }
+        .card-french .card-title { color: #007bff; }
+        .card-spanish .card-title { color: #ffc107; }
+
+        .language-card .card-body {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+<div id="wrapper" class="d-flex">
+
+    <ul class="navbar-nav sidebar">
+        <a class="sidebar-brand" href="#">
+            <i class="fas fa-graduation-cap"></i> <span class="d-inline">LandyForm</span>
+        </a>
+        
+        <li class="nav-item active">
+            <a class="nav-link" href="#">
+                <i class="fas fa-fw fa-home"></i>
+                <span>Language Portal</span>
+            </a>
+        </li>
+
+        <!--quizz-->
+  <li class="nav-item"> <a class="nav-link" href="my_results.html">
+        <i class="fas fa-fw fa-file-invoice"></i>
+        <span>My Results</span>
+    </a>
+</li>
+        <!--quizz-->
+
+        <!--profile-->
+        <li class="nav-item">
+    <a class="nav-link" href="profile.html">
+        <i class="fas fa-fw fa-user"></i>
+        <span>My Profile</span>
+    </a>
+</li>
+<!--profile-->
+
+        <!--setting-->
+<li class="nav-item">
+            <a class="nav-link" href="settings.html">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </li>
+ <!--setting-->
+    </ul>
+    <div id="content-wrapper">
+
+        <nav class="navbar navbar-expand topbar mb-4 bg-white rounded shadow-sm">
+            <div class="container-fluid">
+                <h2 class="h5 mb-0 fw-bold">Select a Language to Create Quizzes</h2>
+                
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-secondary" href="#" id="alertsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                             <span class="d-none d-lg-inline small me-2">Notifications</span>
+                             <i class="fas fa-bell"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-secondary" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img class="img-profile rounded-circle" src="https://via.placeholder.com/40" alt="User Avatar" style="width: 2rem; height: 2rem; margin-right: 0.5rem;">
+                            <span class="d-none d-lg-inline small">My Account</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="content">
+
+            <div class="container-fluid">
+
+                <div class="alert alert-info py-3 mb-5" role="alert">
+                    <h4 class="alert-heading"><i class="fas fa-bullhorn me-2"></i> Welcome to the Quiz Creation Portal!</h4>
+                    <p class="mb-0">Please select the language you wish to create or review quizzes for from the cards below.</p>
+                </div>
+
+                <div class="row justify-content-center">
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="english_dashboard.html" class="text-decoration-none">
+                            <div class="card language-card card-english">
+                                <div class="card-body">
+                                    <i class="fas fa-language fa-3x mb-3" style="color: #dc3545;"></i>
+                                    <h4 class="card-title">English Language</h4>
+                                    <p class="card-text text-secondary mb-3">Click to access quizzes for Grammar, Vocabulary, and Reading.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="french_dashboard.html" class="text-decoration-none">
+                            <div class="card language-card card-french">
+                                <div class="card-body">
+                                    <i class="fas fa-flag fa-3x mb-3" style="color: #007bff;"></i>
+                                    <h4 class="card-title">French Language</h4>
+                                    <p class="card-text text-secondary mb-3">Start creating quizzes for comprehension and linguistic structures.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <a href="spanish_dashboard.html" class="text-decoration-none">
+                            <div class="card language-card card-spanish">
+                                <div class="card-body">
+                                    <i class="fas fa-globe-americas fa-3x mb-3" style="color: #ffc107;"></i>
+                                    <h4 class="card-title">Spanish Language</h4>
+                                    <p class="card-text text-secondary mb-3">¡Hola! Add your new tests for the Spanish language.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!--Arabic lang-->
+                 <div class="row justify-content-center">
+
+    <div class="col-lg-4 col-md-6 mb-4">
+        <a href="arabic_dashboard.html" class="text-decoration-none"> 
+              <div class="card language-card card-spanish">
+                <div class="card-body">
+ <i class="fas fa-pen-nib fa-3x mb-3" style="color: #00a86b;"></i>
+                    <h4 class="card-title" style="color: #00a86b;"> Arabic language</h4>
+                    <p class="card-text text-secondary mb-3">Start by creating and reviewing grammar, morphology, and reading models.</p>
+                </div>
+            </div>
+        </a>
+    </div>
+                    <!--Arabic lang-->
+
+                    <!--Trkish-->
+                        <div class="col-lg-4 col-md-6 mb-4">
+    <a href="turkish_dashboard.html" class="text-decoration-none">
+        <div class="card language-card card-turkish"> 
+            <div class="card-body">
+                <i class="fas fa-moon fa-3x mb-3" style="color: #e74c3c;"></i>
+                <h4 class="card-title" style="color: #dc3545;">Turkish Language</h4>
+                <p class="card-text text-secondary mb-3">Click to access Turkish form builders grammar, morphology, and reading models</p>
+            </div>
+        </div>
+    </a>
+</div>
+        
+                    <!--Trkish-->
+                    <!--X-->
+       <div class="col-lg-4 col-md-6 mb-4">
+    <a href="chinese_dashboard.html" class="text-decoration-none">
+        <div class="card language-card card-chinese"> 
+            <div class="card-body">
+                <i class="fas fa-cogs fa-3x mb-3" style="color: #DAA520;"></i> 
+                <h4 class="card-title" style="color: #DAA520;">Chinese language</h4> 
+                <p class="card-text text-secondary mb-3">Prepare your models for Mandarin and various Hanzi characters.</p>
+            </div>
+        </div>
+    </a>
+</div>
+                    <!--X-->
+                </div>
+             <!---->
+                   <!---->
+            </div>
+            </div>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="quiz.js"></script>
+</body>
+</html>

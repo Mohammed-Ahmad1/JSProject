@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Start Bootstrap - Clone (Image Added)</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: #f7f9fc; 
+        }
+        .hero-section {
+            padding: 8rem 0; /* 8rem top and bottom padding */
+        }
+.feedback-section { padding: 5rem 0; background-color: #ffffff; min-height: 70vh; }
+        
+        /* CSS لتنسيق البطاقة */
+        .testimonial-card {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); 
+            border: none;
+        }
+        .testimonial-card .card-up {
+            height: 120px;
+            overflow: hidden;
+            border-top-left-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+        }
+        .testimonial-card .avatar {
+            width: 110px;
+            margin-top: -60px; /* يرفع الصورة */
+            overflow: hidden;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            position: relative; 
+            z-index: 10;
+        }
+
+        /* ⭐⭐ التعديل الجديد لظهور الأسهم بوضوح ⭐⭐ */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: #5D956B; /* لون خلفية السهم (الأخضر الخاص بموقعك) */
+            border-radius: 50%; 
+            width: 30px;
+            height: 30px;
+            background-size: 60%; /* حجم الأيقونة الداخلية */
+            opacity: 0.8; /* لتقليل الشفافية قليلاً */
+        }
+        /* تعديل موقع الأسهم لتكون قريبة من السلايدر (اختياري) */
+        .carousel-control-prev, .carousel-control-next {
+             width: 5%; /* لتقليل المساحة التي تشغلها الأزرار */
+        }
+    
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <div class="container px-5">
+        <a class="navbar-brand fw-bold" href="#">
+         <img src=" result.png" alt="Logo" style="height: 100px;">
+          LandyForm </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="تبديل التنقل">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item me-3">
+                    <a class="nav-link text-dark" href="#">Home</a>
+                </li>
+                  <li class="nav-item me-3">
+                    <a class="nav-link text-dark" href="#Vision">Vision</a>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link text-dark" href="#feedback-section">Feedback</a>
+                </li>
+              <li class="nav-item me-3">
+                    <a class="nav-link text-dark" href="#ContactUs">ContactUs</a>
+                </li>
+        
+<!--btn-->
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <button class="btn me-md-2" type="button" 
+          style="background-color: #5D956B !important; border-color: #5D956B !important; color: white !important;">
+sign in
+  </button>
+  
+  <button class="btn" type="button" 
+          style="background-color: #5D956B !important; border-color: #5D956B !important; color: white !important;">
+   register
+  </button>
+</div>
+<!--brn-->
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="py-5 hero-section">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center justify-content-center">
+            
+            <div class="col-lg-6 col-md-8 text-lg-start text-center mb-5 mb-lg-0">
+                
+                <h1 class="display-3 fw-bolder mb-4" style="color:#5D956B">The standard for multilingual assessment.</h1>
+                
+                <p class="lead text-muted mb-5">
+                 Design, deploy, and analyze language exams for a global classroom
+                </p>
+                
+                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-lg-start">
+<button class="btn btn-lg" type="button" 
+          style="background-color: #5D956B !important; border-color: #5D956B !important; color: white !important;">
+    Get Started
+</button>
+                        <i class="fas fa-arrow-right ms-2"></i>
+            
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-8 d-none d-lg-block">
+                <div class="d-flex justify-content-center">
+                    <img src="Learning languages-rafiki.svg" 
+                         alt="Stylized illustration for a landing page" 
+                         class="img-fluid" style="max-width: 90%; height: auto;">
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</header>
+
+<!--Vision-->
+<section id="Vision" class="py-5" style="background-color: #f7f9fc;">
+    <div class="container px-5">
+
+        <div class="row d-flex justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="fw-bolder" style="color:#5D956B;">Our Strategic Vision</h2>
+                <p class="lead text-muted">How we are revolutionizing language assessment globally.</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            
+            <div class="col-lg-4">
+                <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3 text-center">
+                    <div class="features-icons-icon d-flex justify-content-center mb-3">
+                        <i class="fas fa-globe-americas fa-3x" style="color: #5D956B;"></i>
+                    </div>
+                    <h3 class="fw-bold mb-2">Global Leadership & Accuracy</h3>
+                    <p class="lead text-muted mb-0">To become the global standard for language test evaluation and management, ensuring fair and accurate assessment for all speakers worldwide.</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3 text-center">
+                    <div class="features-icons-icon d-flex justify-content-center mb-3">
+                        <i class="fas fa-handshake fa-3x" style="color: #5D956B;"></i>
+                    </div>
+                    <h3 class="fw-bold mb-2">Empowerment & Breaking Barriers</h3>
+                    <p class="lead text-muted mb-0">Empowering individuals and institutions to break down language barriers by providing transparent and effective assessment tools that unlock global learning and opportunities.</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4">
+                <div class="features-icons-item mx-auto mb-0 mb-lg-3 text-center">
+                    <div class="features-icons-icon d-flex justify-content-center mb-3">
+                        <i class="fas fa-robot fa-3x" style="color: #5D956B;"></i>
+                    </div>
+                    <h3 class="fw-bold mb-2">Future & Technology</h3>
+                    <p class="lead text-muted mb-0">Redefining the future of language teaching and assessment through a smart and innovative platform that transforms exam preparation into an easy, data-driven experience.</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<!--Vision-->
+
+<!--feadback-->
+<section id="feedback-section" class="py-5" style="background-color: #f7f9fc;">
+  <div class="container px-5">
+    
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-10 col-xl-8 text-center">
+        <h3 class="fw-bolder mb-4" style="color:#5D956B;">Feedback</h3>
+        <p class="lead text-muted mb-5 pb-2 pb-md-0">
+       "The standard for multilingual assessment. Design, deploy, and analyze language exams for a global classroom."
+        </p>
+      </div>
+    </div>
+
+    <div id="testimonialSlider" class="carousel slide" data-bs-ride="false">
+      
+      <div class="carousel-inner">
+        
+        <div class="carousel-item active">
+          <div class="row text-center d-flex align-items-stretch">
+            
+            <div class="col-md-4 mb-5 mb-md-0 d-flex align-items-stretch">
+              <div class="card testimonial-card">
+                <div class="card-up" style="background-color: #9d789b;"></div>
+                <div class="avatar mx-auto bg-white">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp"
+                    class="rounded-circle img-fluid" alt="Maria Smantha" />
+                </div>
+                <div class="card-body">
+                  <h4 class="mb-4">Maria Smantha</h4>
+                  <hr />
+                  <p class="text-muted mt-4">
+                    <i class="fas fa-quote-left pe-2"></i>"LandyForm has cut our exam preparation time by half! The ease of generating tests in both Arabic and English simultaneously is a massive institutional benefit
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-4 mb-5 mb-md-0 d-flex align-items-stretch">
+              <div class="card testimonial-card">
+                <div class="card-up" style="background-color: #7a81a8;"></div>
+                <div class="avatar mx-auto bg-white">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp"
+                    class="rounded-circle img-fluid" alt="Lisa Cudrow" />
+                </div>
+                <div class="card-body">
+                  <h4 class="mb-4">Lisa Cudrow</h4>
+                  <hr />
+                  <p class="text-muted mt-4">
+                    <i class="fas fa-quote-left pe-2"></i>The AI scoring for the open-ended questions is surprisingly accurate. It saves me hours of manual grading every week, allowing me to focus on teaching.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-4 mb-0 d-flex align-items-stretch">
+              <div class="card testimonial-card">
+                <div class="card-up" style="background-color: #6d5b98;"></div>
+                <div class="avatar mx-auto bg-white">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp"
+                    class="rounded-circle img-fluid" alt="John Smith" />
+                </div>
+                <div class="card-body">
+                  <h4 class="mb-4">John Smith</h4>
+                  <hr />
+                  <p class="text-muted mt-4">
+                    <i class="fas fa-quote-left pe-2"></i>Finally, a platform that truly understands global education. Our students take exams in three different languages, and LandyForm handles the localization perfectly
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="carousel-item">
+          <div class="row text-center d-flex align-items-stretch">
+            
+            <div class="col-md-4 mb-5 mb-md-0 d-flex align-items-stretch">
+              <div class="card testimonial-card">
+                <div class="card-up" style="background-color: #5D956B;"></div>
+                <div class="avatar mx-auto bg-white">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(4).webp"
+                    class="rounded-circle img-fluid" alt="Jane Doe" />
+                </div>
+                <div class="card-body">
+                  <h4 class="mb-4">Jane Doe</h4>
+                  <hr />
+                  <p class="text-muted mt-4">
+                    <i class="fas fa-quote-left pe-2"></i>The analytic reports are incredibly detailed. We can pinpoint exactly where students are struggling across all language levels
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-4 mb-5 mb-md-0 d-flex align-items-stretch">
+              <div class="card testimonial-card">
+                <div class="card-up" style="background-color: #5b986b;"></div>
+                <div class="avatar mx-auto bg-white">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(5).webp"
+                    class="rounded-circle img-fluid" alt="Alex V." />
+                </div>
+                <div class="card-body">
+                  <h4 class="mb-4">Alex V.</h4>
+                  <hr />
+                  <p class="text-muted mt-4">
+                    <i class="fas fa-quote-left pe-2"></i>We integrated LandyForm with our existing LMS effortlessly. The setup was fast, and the data transfer is smooth.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-4 mb-0 d-flex align-items-stretch">
+              <div class="card testimonial-card">
+                <div class="card-up" style="background-color: #5a7a98;"></div>
+                <div class="avatar mx-auto bg-white">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(6).webp"
+                    class="rounded-circle img-fluid" alt="Sarah M." />
+                </div>
+                <div class="card-body">
+                  <h4 class="mb-4">Sarah M.</h4>
+                  <hr />
+                  <p class="text-muted mt-4">
+                    <i class="fas fa-quote-left pe-2"></i>An essential platform for any institution teaching multiple languages simultaneously.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialSlider" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialSlider" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
+    </div>
+    </div>
+</section>
+<!--feadback-->
+
+<!--ContactUs-->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+
+<section id="ContactUs" class="py-5" style="background-color: #f7f9fc;">
+    <div class="container px-5">
+        
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h2 class="fw-bolder mb-4" style="color:#5D956B;">Contact Us</h2>
+                <p class="lead text-muted mb-5 pb-2">
+                    We are here to help you with any inquiries you have about exam templates or available features.
+                </p>
+            </div>
+        </div>
+        
+        <div class="row gx-5">
+            
+            <div class="col-lg-4 mb-5">
+                <div class="bg-white p-4 rounded-3 shadow-sm h-100">
+                    <h4 class="fw-bold mb-3" style="color:#5D956B;">Contact Details</h4>
+                    <p class="text-muted">You can reach us through the following channels:</p>
+
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-phone fa-lg me-3" style="color: #5D956B;"></i>
+                        <p class="mb-0 text-muted">+962 7XXXXXXXX</p>
+                    </div>
+                    
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="fas fa-envelope fa-lg me-3" style="color: #5D956B;"></i>
+                        <p class="mb-0 text-muted">support@landyform.com</p>
+                    </div>
+                    
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-map-marker-alt fa-lg me-3" style="color: #5D956B;"></i>
+                        <p class="mb-0 text-muted">Amman, Jordan</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8 mb-5">
+                <div class="bg-white p-5 rounded-3 shadow-lg">
+                    <form id="contactForm">
+                        
+                        <div class="mb-4">
+                            <label class="form-label fw-bold" for="name">Full Name</label>
+                            <input class="form-control" id="name" type="text" placeholder="Enter your name here..." required />
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold" for="email">Email Address</label>
+                            <input class="form-control" id="email" type="email" placeholder="name@example.com" required />
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold" for="subject">Subject</label>
+                            <input class="form-control" id="subject" type="text" placeholder="What is your inquiry about?" required />
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold" for="message">Message</label>
+                            <textarea class="form-control" id="message" type="text" placeholder="Write your message here..." style="height: 10rem;" required></textarea>
+                        </div>
+
+                        <div class="d-grid">
+                            <button class="btn btn-lg fw-bold" id="submitButton" type="submit" 
+                                style="background-color: #5D956B !important; border-color: #5D956B !important; color: white !important;">
+                                Send Message
+                            </button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<!--ContactUs-->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="Home.Js"></script>
+
+</body>
+</html>
