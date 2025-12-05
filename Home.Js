@@ -14,5 +14,12 @@ document.addEventListener('DOMContentLoaded', function () {
     if (getStartedBtn) {
         getStartedBtn.addEventListener('click', redirectToHomepage);
     }
-
 });
+
+document.getElementById("btnRegister").onclick = () => {
+    window.location.href = "signup.html";
+};
+
+document.getElementById("btnSignIn").onclick = () => {
+    window.location.href = "Login.html";
+};
