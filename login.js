@@ -18,7 +18,7 @@ document.getElementById("loginform").addEventListener("submit", function(event) 
 
     if (foundUser) {
         sessionStorage.setItem("loggedInUser", foundUser.username); 
-        window.location.href = "home.html";
+        window.location.href = "Home.html";
     } else {
         const msg = document.getElementById("msg");
         if (msg) {
