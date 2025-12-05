@@ -1,25 +1,36 @@
-// script.js
-
 document.addEventListener('DOMContentLoaded', function () {
-    // Select the "Get Started" button and the arrow icon
+
     const getStartedBtn = document.querySelector('.hero-section .btn.btn-lg');
-    const arrowIcon = document.querySelector('.hero-section .fa-arrow-right');
-
-    // Redirect function
-    function redirectToHomepage() {
-        window.location.href = "user.html";
-    }
-
-    // Add click event listeners
     if (getStartedBtn) {
-        getStartedBtn.addEventListener('click', redirectToHomepage);
+        getStartedBtn.addEventListener('click', function () {
+
+            const loggedInUser = 
+                                 localStorage.getItem("loggedInUser");
+
+            if (loggedInUser) {
+                // Logged in → go to user dashboard
+                window.location.href = "user.html";
+            } else {
+                //  Not logged in → show message & redirect to Home Page
+                window.location.href = "Login.html";
+            }
+        });
     }
+
+    //Register button
+    const btnRegister = document.getElementById("btnRegister");
+    if (btnRegister) {
+        btnRegister.onclick = () => {
+            window.location.href = "signup.html";
+        };
+    }
+
+    // Sign In button
+    const btnSignIn = document.getElementById("btnSignIn");
+    if (btnSignIn) {
+        btnSignIn.onclick = () => {
+            window.location.href = "Login.html";
+        };
+    }
+
 });
-
-document.getElementById("btnRegister").onclick = () => {
-    window.location.href = "signup.html";
-};
-
-document.getElementById("btnSignIn").onclick = () => {
-    window.location.href = "Login.html";
-};
